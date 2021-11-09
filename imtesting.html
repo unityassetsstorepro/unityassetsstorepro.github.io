@@ -5,25 +5,29 @@
   <body>
     
     <h1>
-      Testing  3
+      Testing  4.1
       
     </h1>
-    <script>
-    jQuery.ajax( {
+  <script>
+jQuery.ajax( {
   url: '//freegeoip.net/json/',
   type: 'POST',
   dataType: 'jsonp',
   success: function(location) {
     // If the visitor is browsing from Canada.
     if (location.country_code === 'CA') {
-      // Redirect him to the Canadian store.
-      window.top.location.href = 'http://dylanjh.com';
+      // Tell him about the Canadian store.
+      jQuery.fancybox.open(jQuery('#message'));
     }
   }
 } );
-      
-   
-  </script>
+</script>
+<div style="display:none;">
+  <div id="message" style="padding:30px;">
+    <h1>Hello!</h1>
+    <p>You are in Canada, and we have a Canadian website <a href="https://dylanjh.com">here</a>.</p>
+  </div>
+</div>
     
   </body>
   

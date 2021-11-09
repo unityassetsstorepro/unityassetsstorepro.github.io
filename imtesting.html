@@ -1,0 +1,32 @@
+<html>
+  
+  
+  
+  <body>
+    
+    <h1>
+      Testing 
+      
+    </h1>
+    <script>
+    jQuery.ajax( {
+  url: '//freegeoip.net/json/',
+  type: 'POST',
+  dataType: 'jsonp',
+  success: function(location) {
+    // If the visitor is browsing from Canada.
+    if (location.country_code === 'CA') {
+      // Redirect him to the Canadian store.
+      window.top.location.href = 'http://dylanjh.com';
+    }
+  }
+} );
+      
+       </script>
+  </script>
+    
+  </body>
+  
+  
+  
+</html>
